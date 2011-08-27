@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>jQuery Tagit Demo Page</title>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="css/demo1.css" rel="stylesheet" type="text/css"/>
+    <link href="css/tagit-simple-blue.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script src="js/tagit.js"></script>
+  </head>
+
+  <body>
+    <h3>Hidden Select</h3>
+
+    <div class="box">
+      <div class="note">Normally the select is hidden!</div>
+      <ul id="demo1" name="nameOfSelect"></ul>
+      <div class="buttons">
+        <button id="demo1GetTags" value="Get Tags">Get Tags</button>
+      </div>
+    </div>
+
+    <h3>Initial Tags</h3>
+
+    <div class="box">
+      <ul id="demo2" name="demo2">
+        <li>here</li>
+        <li>are</li>
+        <li>some</li>
+        <li>initial</li>
+        <li>tags</li>
+      </ul>
+      <div class="buttons">
+        <button id="demo2GetTags" value="Get Tags">Get Tags</button>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+
+        $('#demo1').tagit({tagSource: availableTags, select: true});
+        $('#demo2').tagit({tagSource: availableTags});
+
+        $('#demo1GetTags').click(function() {
+          showTags($('#demo1').tagit('tags'))
+        });
+
+        $('#demo2GetTags').click(function() {
+          showTags($('#demo2').tagit('tags'))
+        });
+
+        function showTags(tags) {
+          var string = "Tags\r\n--------\r\n";
+          for (var i in tags) {
+            string += tags[i] + "\r\n";
+          }
+          alert(string);
+        }
+      });
+    </script>
+  </body>
+</html>

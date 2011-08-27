@@ -1,0 +1,10 @@
+body {
+  margin: 1em;
+  padding: 0;
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+select.tagit-hiddenSelect {
+  display: inline-block !important;
+}
