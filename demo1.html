@@ -1,14 +1,14 @@
 <html>
   <head>
     <title>jQuery Tagit Demo Page</title>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" rel="stylesheet"
-          type="text/css"/>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <link href="css/demo1.css" rel="stylesheet" type="text/css"/>
     <link href="css/tagit-core.css" rel="stylesheet" type="text/css"/>
     <link href="css/tagit-theme-simple-blue.css" rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
     <script src="js/tagit.js"></script>
+    <script src="js/jqui-autocomplete-selectFirst.js"></script>
   </head>
 
   <body>
@@ -65,7 +65,7 @@
           "Scheme"
         ];
 
-        $('#demo1').tagit({tagSource: availableTags, select: true});
+        $('#demo1').tagit({tagSource: availableTags, select: true, selectFirst: true});
         $('#demo2').tagit({tagSource: availableTags});
 
         $('#demo1GetTags').click(function() {
